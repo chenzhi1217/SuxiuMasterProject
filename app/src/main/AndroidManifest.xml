@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.suxiumaster.repair">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:name=".base.SuxiuMasterApplication"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".base.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!--修改密码-->
+        <activity android:name="com.suxiumaster.repair.businiss.center.ModifyPswActivity"/>
+        <!--登录页面-->
+        <activity android:name=".businiss.center.LoginActivity"/>
+        <!--修改性别-->
+        <activity android:name=".businiss.center.ModifySexActivity"/>
+        <!--订单列表页面-->
+        <activity android:name=".businiss.order.order.OrderListActivity"/>
+        <!--订单详情页面-->
+        <activity android:name=".businiss.order.order.OrderDetailActivity"/>
+        <!--确认订单页面-->
+        <activity android:name=".businiss.order.order.ConfirmOrderActivity"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--订单详情-->
+<layout>
+    <data>
+        <variable name="data" 
+                  type="com.suxiunet.data.entity.order.OrderInfoEntity"/>
+    </data>
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!--订单详细信息-->
+            <include 
+                android:id="@+id/include_order_detail_info"
+                layout="@layout/include_order_detail_info"
+                app:data="@{data}"/>
+
+            <!--维修信息-->
+            <include
+                android:id="@+id/include_order_maintenance_info"
+                layout="@layout/include_order_maintenance_info"
+                app:data="@{data}"/>
+
+            <Button
+                android:id="@+id/bt_complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_user_info_bt"
+                android:text="完成维修"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/button_text_size"/>
+        </LinearLayout>
+    </ScrollView>
+</layout>

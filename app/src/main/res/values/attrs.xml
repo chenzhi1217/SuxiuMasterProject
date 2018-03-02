@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义轮播图的属性-->
+    <declare-styleable name="carousel">
+        <attr name="selPoiColor" format="reference"></attr>
+        <attr name="nomPoiColor" format="reference"></attr>
+        <attr name="pointBg" format="reference"></attr>
+    </declare-styleable>
+
+    <!--页面跳转动画的时间-->
+    <integer name="page_animate_duration">500</integer>
+</resources>
