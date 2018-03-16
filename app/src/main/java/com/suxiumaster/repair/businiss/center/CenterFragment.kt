@@ -128,6 +128,8 @@ class CenterFragment : BasicFragment<FragCenterBinding>() {
         //清除token和用户信息
         try {
             SpUtil.putString(context, SpUtil.TOKEN_KEY, "")
+            SpUtil.putString(context, SpUtil.LOGIN_ID_KEY, "")
+            SpUtil.putString(context, SpUtil.LOGIN_MASTER_ID, "")
             CacheUtil.getInstance().saveCacheData(null, CacheUtil.USER_INFO)
         } catch (e: Exception) {
         }

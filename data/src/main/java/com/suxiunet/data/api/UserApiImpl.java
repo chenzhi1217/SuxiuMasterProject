@@ -61,5 +61,17 @@ public class UserApiImpl implements UserApi {
     public Observable<ApiResponse<Object>> modifyGender(String loginId,String gender) {
         return mApi.modifyGender(loginId,gender);
     }
-    
+
+    /**
+     * 修改师傅密码
+     * @param loginId
+     * @param oldpassWord
+     * @param passWord
+     * @return
+     */
+    @Override
+    public Observable<ApiResponse<Object>> modifyPsw(String loginId, String oldpassWord, String passWord) {
+        return mApi.modifyPsw(loginId,oldpassWord,passWord);
+    }
+
 }

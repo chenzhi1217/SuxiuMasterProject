@@ -1,5 +1,7 @@
 package com.suxiunet.repair.base.baseui
 
+import android.app.Activity
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
@@ -9,7 +11,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.suxiumaster.repair.R
+import com.suxiumaster.repair.base.MainActivity
+import com.suxiumaster.repair.base.SuxiuMasterApplication
+import com.suxiumaster.repair.businiss.center.LoginActivity
 import com.suxiumaster.repair.databinding.FragBasicBinding
+import com.suxiunet.data.exception.ApiException
 
 /**
  * author : chenzhi
@@ -73,7 +79,7 @@ abstract class BasicFragment<BIND : ViewDataBinding> : Fragment() {
     open protected fun setSwipeRefreshEnable(): Boolean {
         return false
     }
-    
+
     /**
      * 失败页面的icon
      */
@@ -117,6 +123,21 @@ abstract class BasicFragment<BIND : ViewDataBinding> : Fragment() {
         showView.visibility = View.VISIBLE
         for (view in hideView) {
             view.visibility = View.GONE
+        }
+    }
+
+    /**
+     * 检测是否登录
+     */
+    fun checkUnLoad(e: Throwable?) {
+        if (e is ApiException) {
+            if (e.displayCode == 405) {
+                //跳转到登录界面
+                var intent = Intent(SuxiuMasterApplication.appContext, LoginActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                activity?.startActivity(intent)
+                activity.finish()
+            }
         }
     }
 }

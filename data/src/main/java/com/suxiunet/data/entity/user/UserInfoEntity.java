@@ -27,8 +27,18 @@ public class UserInfoEntity extends BasicDataEntity {
     private String gender;
     /**
      * 用户头像url
-     */
-    private String url;
+     */ 
+    private String url; 
+        
+    private String masterId;    
+    
+    public String getMasterId() {
+        return masterId;
+    }
+
+    public void setMasterId(String masterId) {
+        this.masterId = masterId;
+    }
 
     public String getLoginId() {
         return loginId;

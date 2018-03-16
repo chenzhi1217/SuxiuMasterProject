@@ -33,6 +33,7 @@
                     android:textSize="@dimen/title_three"/>
 
                 <EditText
+                    android:id="@+id/et_ori_psw"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -62,7 +63,7 @@
                     android:textSize="@dimen/title_three"/>
 
                 <EditText
-                    android:id="@+id/et_login_phone"
+                    android:id="@+id/et_new_psw"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -77,6 +78,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_query_modify"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_alignParentBottom="true"

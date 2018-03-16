@@ -20,13 +20,12 @@ public interface OrderApi {
     /**
      * 查询订单列表
      *
-     * @param loginId
      * @param status
      * @return
      */
     @FormUrlEncoded
     @POST("dnwx/app/order/queryOrderList")
-    Observable<ApiResponse<OrderListEntity>> getOrderList(@Field("masterId") String loginId, @Field("status") String status, @Field("loginType") String loginType);
+    Observable<ApiResponse<OrderListEntity>> getOrderList(@Field("loginId") String masterMp, @Field("status") String status, @Field("loginType") String loginType);
 
     /**
      * 确认订单

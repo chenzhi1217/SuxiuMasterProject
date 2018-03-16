@@ -52,5 +52,15 @@ public interface UserApi {
     @FormUrlEncoded
     @POST("dnwx/app/user/modifyMasInfo")
     Observable<ApiResponse<Object>> modifyGender(@Field("loginId") String loginId, @Field("gender") String gender);
-    
+
+    /**
+     * 修改密码
+     * @param loginId
+     * @param oldpassWord
+     * @param passWord
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("dnwx/app/user/modifyMasPsw")
+    Observable<ApiResponse<Object>> modifyPsw(@Field("loginId") String loginId, @Field("oldpassWord") String oldpassWord, @Field("passWord") String passWord);
 }

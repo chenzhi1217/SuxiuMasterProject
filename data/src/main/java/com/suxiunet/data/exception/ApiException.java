@@ -2,14 +2,14 @@ package com.suxiunet.data.exception;
 
 /**
  * 描述 所有网络异常的基类。
- * 创建人 kelin
+ * 创建人 chenzhi
  * 创建时间 2017/5/30  下午4:40
  * 版本 v 1.0.0
  */
 
 public class ApiException extends RuntimeException {
-    private String displayMessage;
-    private int displayCode;
+    public String displayMessage;
+    public int displayCode;
 
     /**
      * Constructs a new {@code RuntimeException} that includes the current stack
@@ -54,5 +54,9 @@ public class ApiException extends RuntimeException {
 
     public String getDisplayMessage() {
         return displayMessage;
+    }
+
+    public int getDisplayCode() {
+        return displayCode;
     }
 }

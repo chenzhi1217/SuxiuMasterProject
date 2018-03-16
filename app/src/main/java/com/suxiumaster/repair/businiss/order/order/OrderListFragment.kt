@@ -62,13 +62,13 @@ class OrderListFragment(): BasicRecyclerViewFragment<OrderInfoEntity>() {
      */
     private fun getOrderData() {
         val loginId = SpUtil.getString(context, SpUtil.LOGIN_ID_KEY, "")
+        val masterId = SpUtil.getString(context, SpUtil.LOGIN_MASTER_ID, "")
         OrderApiImpl(context).getOrderList(loginId,mCurStatus,"B")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe ({
                     loadSuccess(it)
                 },{loadError(it)})
-        
     }
 
     /**
@@ -77,6 +77,7 @@ class OrderListFragment(): BasicRecyclerViewFragment<OrderInfoEntity>() {
     private fun loadError(it: Throwable?) {
         mParentBinding.sfBasicFrag.isRefreshing = false
         showErrorView()
+        checkUnLoad(it)
     }
 
     /**

@@ -46,7 +46,8 @@ class ConfirmOrderFragment: BasicFragment<FragFirmOrderBinding>() {
      * 确认订单失败
      */
     private fun confirmError(it: Throwable?) {
-        ToastUtil.showToast("请求失败")
+        ToastUtil.showToast(it?.message?:"确认失败")
+        checkUnLoad(it)
     }
     
     /**
@@ -67,7 +68,7 @@ class ConfirmOrderFragment: BasicFragment<FragFirmOrderBinding>() {
         val maintenancePlan = mBinding.etMaintenancePlan.text.toString().trim()
         //保修时间
         val warrantyTime = mBinding.etWarrantyTime.text.toString().trim()
-
+        
         if (price.isNullOrEmpty()) {
             ToastUtil.showToast("请输入金额")
             return false
@@ -86,7 +87,7 @@ class ConfirmOrderFragment: BasicFragment<FragFirmOrderBinding>() {
         map.put("orderNo",orderNo)
         map.put("maintenanceAmt",price)
         map.put("maintenancePlan", maintenancePlan)
-        map.put("warrantyTime",warrantyTime)
+        map.put("warranty",warrantyTime)
         return true
     }
 }

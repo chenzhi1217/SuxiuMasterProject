@@ -44,8 +44,7 @@ class LoginFragment: BasicFragment<FragLoginBinding>() {
             ToastUtil.showToast("请输入密码")
             return
         }
-//        var md5Psw = MD5Utils.encode(psw)
-        var md5Psw = "9db06bcff9248837f86d1a6bcf41c9e7"
+        var md5Psw = MD5Utils.encode(psw)
         
         UserApiImpl(context).login(loginName,"B",md5Psw)
                 .subscribeOn(Schedulers.io())
@@ -68,6 +67,7 @@ class LoginFragment: BasicFragment<FragLoginBinding>() {
         //将token保存到本地
         SpUtil.putString(context, SpUtil.TOKEN_KEY,data?.token)
         SpUtil.putString(context, SpUtil.LOGIN_ID_KEY,data?.loginId)
+        SpUtil.putString(context,SpUtil.LOGIN_MASTER_ID,data?.masterId)
         //销毁当前页面
         activity.finish()
     }
