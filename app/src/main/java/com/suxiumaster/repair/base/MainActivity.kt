@@ -4,12 +4,14 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.KeyEvent
 import android.view.View
 import android.widget.RadioGroup
 import com.suxiumaster.repair.R
 import com.suxiumaster.repair.businiss.center.CenterFragment
 import com.suxiumaster.repair.businiss.order.home.view.HomeFragment
 import com.suxiumaster.repair.databinding.ActMainBinding
+import com.suxiumaster.repair.util.ToastUtil
 import com.suxiunet.data.util.Utils
 import java.util.ArrayList
 
@@ -99,5 +101,21 @@ class MainActivity : AppCompatActivity() {
         //提交事务
         transaction.commit()
         mIndex = index
+    }
+
+    private var exitTime: Long = 0
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        //监听返回键
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (System.currentTimeMillis() - exitTime > 2000) {
+                ToastUtil.showToast("再按一次退出程序")
+                exitTime = System.currentTimeMillis()
+            } else {
+                finish()
+                System.exit(0)
+                android.os.Process.killProcess(android.os.Process.myPid())
+            }
+        }
+        return false
     }
 }

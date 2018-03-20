@@ -1,6 +1,8 @@
 package com.suxiumaster.repair.businiss.order.order
 
 import android.content.Intent
+import android.text.TextUtils
+import android.view.View
 import com.suxiumaster.repair.R
 import com.suxiumaster.repair.databinding.FragOrderDetailBinding
 import com.suxiunet.data.entity.order.OrderInfoEntity
@@ -14,6 +16,11 @@ import com.suxiunet.repair.base.baseui.BasicFragment
 class OrderDetailFragment: BasicFragment<FragOrderDetailBinding>() {
     override fun init() {
         val orderInfo = (activity as OrderDetailActivity).getOrderInfo()
+        val pageType = (activity as OrderDetailActivity).getPageType()
+        if (TextUtils.isEmpty(pageType)) {
+            //隐藏按钮
+            mBinding?.btComplete.visibility = View.GONE
+        }
         mBinding.data = orderInfo
         initData(orderInfo)
         mBinding.btComplete.setOnClickListener { 

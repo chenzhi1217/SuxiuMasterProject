@@ -101,6 +101,7 @@ class OrderListFragment(): BasicRecyclerViewFragment<OrderInfoEntity>() {
     fun goOrderDetail(data: OrderInfoEntity) {
         val intent = Intent(context, OrderDetailActivity::class.java)
         intent.putExtra(OrderDetailActivity.ORDER_INFO_KEY,data)
+        intent.putExtra(OrderDetailActivity.ORDER_TYPE_KEY, mCurStatus)
         startActivity(intent)
     }
     

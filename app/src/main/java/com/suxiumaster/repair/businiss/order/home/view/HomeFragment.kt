@@ -20,7 +20,7 @@ import com.suxiunet.repair.base.baseui.BasicFragment
 class HomeFragment : BasicFragment<FragHomeBinding>() {
     override fun init() {
         //初始化轮播图
-        initLunbo()
+//        initLunbo()
         mBinding.fragment = this
     }
 
@@ -31,13 +31,13 @@ class HomeFragment : BasicFragment<FragHomeBinding>() {
     /**
      * 初始化显示轮播图
      */
-    private fun initLunbo() {
+    /*private fun initLunbo() {
         var images: ArrayList<String> = ArrayList()
         images.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517892853316&di=3dde0fe1c4fd43bb22aa8e6e7288e986&imgtype=0&src=http%3A%2F%2Fpic90.huitu.com%2Fres%2F20161119%2F732704_20161119114417229020_1.jpg")
         images.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1515572537680&di=12c10b2ac43a5194107a105ae2235cae&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fback_pic%2Fqk%2Fback_origin_pic%2F00%2F01%2F42%2F3c4a16697485ff3717379118de096f7e.jpg")
         mBinding.vphFragHome.setImageResource(images)
         mBinding.vphFragHome.show()
-    }
+    }*/
 
     /**
      * 拨打公司电话

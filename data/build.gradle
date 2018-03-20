@@ -50,4 +50,6 @@ dependencies {
     /*高德定位功能*/
     compile 'com.amap.api:location:3.6.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //圆形图
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

@@ -31,11 +31,11 @@
             app:layout_constraintRight_toRightOf="parent">
 
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_frag_center_user"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:src="@mipmap/app_logo"/>
+                android:src="@mipmap/icon_master_logo"/>
 
             <TextView
                 android:id="@+id/tv_frag_center_nick_name"
@@ -118,10 +118,11 @@
                     android:src="@mipmap/icon_arrow_right"/>
 
             </RelativeLayout>
-            <include layout="@layout/include_common_line"/>
+            <!--<include layout="@layout/include_common_line"/>-->
 
             <!--联系公司-->
             <RelativeLayout
+                android:visibility="gone"
                 android:id="@+id/rl_contact_company"
                 style="@style/StyleCenterHomeItem">
                 <ImageView

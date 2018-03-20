@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SuxiuMasterProject</string>
+    <string name="app_name">快修师傅端</string>
     <string name="data_is_empty">暂时没有数据</string>
 
     <string name="desktop">台式机</string>
